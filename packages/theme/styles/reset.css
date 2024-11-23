@@ -72,3 +72,8 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+html {
+  /* rem 10px */
+  font-size: 62.5%;
+}

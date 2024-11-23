@@ -2,10 +2,10 @@
   "name": "dolphin-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo 123",
-    "dev": "pnpm --filter @dolphin-ui/test dev"
+    "dev": "pnpm --filter @dolphin-ui/test dev",
+    "build": "pnpm --filter dolphin-ui build"
   },
   "keywords": [],
   "author": "",
@@ -21,18 +21,20 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "move-file-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
     "vite": "^5.4.10",
     "vitest": "^2.1.4"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "styled-components": "^6.1.13",
     "@dolphin-ui/hooks": "workspace:*",
     "@dolphin-ui/theme": "workspace:*",
     "@dolphin-ui/utils": "workspace:*",
-    "dolphin-ui": "workspace:*"
+    "dolphin-ui": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "styled-components": "^6.1.13"
   }
 }

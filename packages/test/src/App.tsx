@@ -1,13 +1,20 @@
-import { colors } from "@dolphin-ui/theme";
 import { Button } from "dolphin-ui";
+import styled from "styled-components";
+
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
 
 function App() {
   return (
-    <div>
-      <h2 style={{ color: colors.red.red_500 }}>123</h2>
+    <Box>
       <h3>测试</h3>
-      <Button></Button>
-    </div>
+      <Button type="primary" onClick={() => console.log(123)}>
+        按钮
+      </Button>
+    </Box>
   );
 }
 

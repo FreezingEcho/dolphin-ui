@@ -2,14 +2,43 @@
   "name": "dolphin-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/core/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "sideEffects": [
+    "./dist/index.css"
+  ],
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "run-s build-only move-style",
+    "build-only": "run-p build-es build-umd",
+    "build-es": "vite build --config vite.es.config.ts",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "vite-plugin-dts": "^4.3.0",
     "@dolphin-ui/components": "workspace:*"
   }
 }
